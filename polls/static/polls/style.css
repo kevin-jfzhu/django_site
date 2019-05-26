@@ -1,0 +1,17 @@
+li a {
+    color: green;
+}
+
+td {
+    color: white;
+    /* background-color: darkgrey; */
+}
+
+a {
+    color: lightyellow;
+}
+
+body {
+    background: white url("images/background-image.jpg") no-repeat;
+}
+

@@ -2,16 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
     <title>Title</title>
 </head>
 <body>
 
 {% if latest_question_list %}
-    <ul>
+    <table>
+    <thead></thead>
+    <tbody>
     {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        <tr>
+            <td><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td> ({{ question.pub_date }}) </td>
+        </tr>
     {% endfor %}
-    </ul>
+    </tbody>
+    </table>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
